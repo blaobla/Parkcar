@@ -119,7 +119,7 @@ def pay(authorization):
         third_no,fee,begin,duration,user_id = first_results
         print("third_no：",third_no, "入场时间：", begin, "用户ID：", user_id,"停车时长：",duration, "费用：",fee)
         # # //////////////////////////////2//////////////////////////////////////////////////////
-        if(fee>=20): # 交费
+        if(fee!=20): # 交费
             order_number = request_second(authorization,third_no,fee,begin)
             print("order_number：",order_number)
         # # /////////////////////////////3//////////////////////////////////////////////////////
@@ -134,8 +134,10 @@ def pay(authorization):
                     
         else:
             print(":::先不用交费")
+            return "先不用交费"
     except Exception as e:
         print("异常>>>>>>>>>>>","问题原因：",e)
+        return "异常"
 
 
 
