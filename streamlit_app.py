@@ -137,7 +137,7 @@ def pay(authorization):
             return "先不用交费"
     except Exception as e:
         print("异常>>>>>>>>>>>","问题原因：",e)
-        return "异常"
+        return "异常"+str(e)
 
 
 
